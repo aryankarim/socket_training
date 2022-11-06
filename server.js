@@ -1,11 +1,10 @@
 import express from "express";
-
-const PORT = 3000;
+import dotenv from "dotenv";
+dotenv.config();
 
 const app = express();
 
-const server = app.listen(PORT);
-
+const server = app.listen(process.env.SERVER_PORT);
 app.use(express.static("public"));
 
-console.log("Server running on port " + PORT);
+console.log("Server running on port " + process.env.SERVER_PORT);
